@@ -15,13 +15,13 @@
 
     <node pkg="move_base" type="move_base" name="move_base" output="screen">
         <param name="controller_frequency" value="1.0"/>
-        <rosparam file="$(find demo)/costmap_common_params.yaml" 
+        <rosparam file="$(find exploration_demo)/costmap_common_params.yaml" 
             command="load" ns="global_costmap" />
-        <rosparam file="$(find demo)/costmap_common_params.yaml" 
+        <rosparam file="$(find exploration_demo)/costmap_common_params.yaml" 
             command="load" ns="local_costmap" />
-        <rosparam file="$(find demo)/local_costmap_params.yaml" command="load" />
-        <rosparam file="$(find demo)/global_costmap_params.yaml" command="load" />
-        <rosparam file="$(find demo)/trajectory_planner.yaml" command="load" />
+        <rosparam file="$(find exploration_demo)/local_costmap_params.yaml" command="load" />
+        <rosparam file="$(find exploration_demo)/global_costmap_params.yaml" command="load" />
+        <rosparam file="$(find exploration_demo)/trajectory_planner.yaml" command="load" />
     </node>
 
     <node pkg="frontier_exploration" type="explore_client" name="explore_client" output="screen"/>
@@ -31,6 +31,6 @@
         <param name="frequency" type="double" value="1.0"/>
         <param name="goal_aliasing" type="double" value="0.5"/>
         <rosparam ns="explore_costmap" subst_value="true" 
-            file="$(find demo)/exploration.yaml" command="load" />
+            file="$(find exploration_demo)/exploration.yaml" command="load" />
     </node>
 </launch>
