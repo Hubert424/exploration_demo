@@ -8,4 +8,4 @@ local_costmap:
   height: 2
   origin_x: -1
   origin_y: -1
-  resolution: 0.1
+  resolution: 0.025

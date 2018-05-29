@@ -6,7 +6,7 @@
     <node pkg="gmapping" type="slam_gmapping" name="gmapping">
         <param name="base_frame" value="ROSbot2_base"/>
         <param name="odom_frame" value="odom" />
-        <param name="delta" value="0.1"/>
+        <param name="delta" value="0.025"/>
         <param name="xmin" value="-2.5"/>
         <param name="ymin" value="-2.5"/>
         <param name="xmax" value="2.5"/>
