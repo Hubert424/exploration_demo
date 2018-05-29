@@ -1,0 +1,15 @@
+.vscode
+build
+devel
+.catkin_workspace
+catkin
+catkin_generated
+CMakeFiles
+gtest
+.ninja_deps
+.ninja_log
+build.ninja
+rules.ninja
+cmake_install.cmake
+CMakeCache.txt
+CTestTestfile.cmake
