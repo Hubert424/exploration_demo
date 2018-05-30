@@ -23,7 +23,7 @@
     </node>
 
     <node pkg="move_base" type="move_base" name="move_base" output="screen">
-        <param name="controller_frequency" value="15.0"/>
+        <param name="controller_frequency" value="5.0"/>
         <param name="recovery_behavior_enabled" value="true"/>
         <rosparam file="$(find exploration_demo)/costmap_common_params.yaml" command="load" ns="global_costmap" />
         <rosparam file="$(find exploration_demo)/costmap_common_params.yaml" command="load" ns="local_costmap" />

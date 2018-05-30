@@ -1,7 +1,7 @@
 footprint: [[0.1, 0.1], [0.1, -0.1], [-0.1, -0.1], [-0.1, 0.1]]
 transform_tolerance: 5
-update_frequency: 5
-publish_frequency: 5
+update_frequency: 1
+publish_frequency: 1
 global_frame: map
 robot_base_frame: ROSbot2_base
 
@@ -18,4 +18,4 @@ explore_boundary:
     frontier_travel_point: middle
     explore_clear_space: false
 inflation:
-    inflation_radius: 0.2
+    inflation_radius: 0.25
