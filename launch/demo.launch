@@ -1,12 +1,16 @@
 <launch>
     <include file="$(find rplidar_ros)/launch/rplidar.launch"></include>
+
     <node pkg="htutorial_9" type="serial_bridge.sh" name="bridge" output="screen"/>
+
     <node pkg="tf" type="static_transform_publisher" name="ROSbot2_laser" args="0 0 0.1 3.14 0 0 ROSbot2_base laser 10" />
+
     <node pkg="pose_to_tf" type="pose_to_tf_transform" name="pose_to_tf_transform" required="true"/>
+    
     <node pkg="gmapping" type="slam_gmapping" name="gmapping">
         <param name="base_frame" value="ROSbot2_base"/>
         <param name="odom_frame" value="odom" />
-        <param name="delta" value="0.025"/>
+        <param name="delta" value="0.05"/>
         <param name="xmin" value="-2.5"/>
         <param name="ymin" value="-2.5"/>
         <param name="xmax" value="2.5"/>
@@ -15,7 +19,8 @@
     </node>
 
     <node pkg="move_base" type="move_base" name="move_base" output="screen">
-        <param name="controller_frequency" value="1.0"/>
+        <param name="controller_frequency" value="10.0"/>
+	<param name="recovery_behavior_enabled" value="true"/>
         <rosparam file="$(find exploration_demo)/costmap_common_params.yaml" 
             command="load" ns="global_costmap" />
         <rosparam file="$(find exploration_demo)/costmap_common_params.yaml" 
