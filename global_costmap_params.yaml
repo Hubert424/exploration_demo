@@ -1,6 +1,6 @@
 global_costmap:
-  update_frequency: 2.5
-  publish_frequency: 2.5
+  update_frequency: 1
+  publish_frequency: 1
   transform_tolerance: 5
   width: 5
   height: 5
@@ -8,5 +8,5 @@ global_costmap:
   origin_y: -2.5
   static_map: false
   rolling_window: true
-  inflation_radius: 0.25
-  resolution: 0.02
+  inflation_radius: 0.7
+  resolution: 0.01

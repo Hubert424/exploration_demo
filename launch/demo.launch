@@ -19,12 +19,11 @@
         <param name="map_update_interval" value="1"/>
         <param name="linearUpdate" value="0.2"/>
         <param name="angularUpdate" value="0.1"/>
-
     </node>
 
     <node pkg="move_base" type="move_base" name="move_base" output="screen">
-        <param name="controller_frequency" value="5.0"/>
         <param name="recovery_behavior_enabled" value="true"/>
+        <param name="controller_frequency" value="10.0"/>
         <rosparam file="$(find exploration_demo)/costmap_common_params.yaml" command="load" ns="global_costmap" />
         <rosparam file="$(find exploration_demo)/costmap_common_params.yaml" command="load" ns="local_costmap" />
         <rosparam file="$(find exploration_demo)/local_costmap_params.yaml" command="load" />
@@ -35,7 +34,7 @@
     <node pkg="frontier_exploration" type="explore_client" name="explore_client" output="screen"/>
 
     <node pkg="frontier_exploration" type="explore_server" name="explore_server" output="screen">
-        <param name="frequency" type="double" value="5.0"/>
+        <param name="frequency" type="double" value="1.0"/>
         <param name="goal_aliasing" type="double" value="0.1"/>
         <rosparam ns="explore_costmap" subst_value="true" file="$(find exploration_demo)/exploration.yaml" command="load" />
     </node>
