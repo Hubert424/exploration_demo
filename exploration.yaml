@@ -1,4 +1,4 @@
-footprint: [[0.1, 0.1], [0.1, -0.1], [-0.1, -0.1], [-0.1, 0.1]]
+footprint: [[0.10, 0.12], [0.10, -0.12], [-0.10, -0.12], [-0.10, 0.12]]
 transform_tolerance: 5
 update_frequency: 5
 publish_frequency: 5
@@ -15,7 +15,7 @@ static:
     subscribe_to_updates: true
 explore_boundary:
     resize_to_boundary: false
-    frontier_travel_point: middle
+    frontier_travel_point: "middle" 
     explore_clear_space: false
 inflation:
     inflation_radius: 0.2
