@@ -11,20 +11,6 @@
 
     <node pkg="pose_to_tf" type="tf_to_pose" name="tf_to_pose" required="true"/>
 
-    <node pkg="gmapping" type="slam_gmapping" name="gmapping">
-        <param name="base_frame" value="ROSbot2_base"/>
-        <param name="odom_frame" value="odom" />
-        <param name="delta" value="0.05"/>
-        <param name="xmin" value="-25"/>
-        <param name="ymin" value="-25"/>
-        <param name="xmax" value="25"/>
-        <param name="ymax" value="25"/>
-        <param name="maxUrange" value="5"/>
-        <param name="map_update_interval" value="1"/>
-        <param name="linearUpdate" value="0.2"/>
-        <param name="angularUpdate" value="0.1"/>
-    </node>
-
     <node pkg="move_base" type="move_base" name="move_base" output="screen">
         <param name="recovery_behavior_enabled" value="true"/>
         <param name="controller_frequency" value="10.0"/>
@@ -34,6 +20,8 @@
         <rosparam file="$(find exploration_demo)/global_costmap_params.yaml" command="load" />
         <rosparam file="$(find exploration_demo)/trajectory_planner.yaml" command="load" />
     </node>
+
+    <node pkg="exploration_demo" type="gmapping_supervisor.py" name="gmapping_supervisor" output="screen"/>
 
     <node pkg="frontier_exploration" type="explore_client" name="explore_client" output="screen"/>
 
