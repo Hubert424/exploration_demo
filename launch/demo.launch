@@ -36,4 +36,8 @@
         <param name="port" value="8082" />
     </node>
 
+    <include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch">
+        <arg name="port" value="9090"/>
+    </include>
+
 </launch>
